@@ -1,4 +1,4 @@
-# Oregon State University Beamer Theme
+# University of Washington Beamer Theme
 
 ## Description
 
