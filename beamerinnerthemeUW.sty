@@ -1,0 +1,52 @@
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%|                                               |%
+%| By: Jeremy Lilly, Michael Kupperman           |%
+%| 4/29/22                                       |%
+%|                                               |%
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+\mode<presentation>
+
+
+% Title page
+\defbeamertemplate*{title page}{uw_title_page}{
+    \begin{beamercolorbox}[wd=\paperwidth, ht=\paperheight]{title page}
+        \begin{tikzpicture}
+            \useasboundingbox[fill=white] (0, 0) rectangle(\paperwidth, \paperheight);
+            \node[inner sep=0pt] (logo) at (1.75, 0.5) {\includegraphics[scale=0.5]{uw_theme_images/stacked_uw.png}};
+            \node[align=right, text width=5.75cm] (institute) at (9.7, 0.5) {\usebeamerfont{institute}\insertinstitute};
+            \ifx\insertdepartment\@null%
+                % nothing
+            \else
+                \draw[line width=0.3mm, uw_purple] (3.65, 1) -- (3.65, 0);
+                \node[anchor=west, text width=10cm] (institute) at (3.8, 0.5) {\usebeamerfont{department}\textcolor{uw_purple}\insertdepartment};
+            \fi
+            \ifx\inserttitlegraphic\@empty%
+                \node[text centered, text width=14cm, uw_purple] (title) at (\paperwidth/2, 6) {\usebeamerfont{title}\inserttitle\\ \medskip\usebeamerfont{subtitle}\textcolor{uw_black}{\insertsubtitle}};
+                \node[text centered, text width=10cm] (author) at (\paperwidth/2, 3) {\usebeamerfont{author}\insertauthor\\ \medskip\usebeamerfont{date}\insertdate};
+            \else
+                \node (graphic) at (\paperwidth/2, \paperheight/2) {\inserttitlegraphic};
+
+                % Compute the height of the title size
+                \newsavebox{\titlegraphicbox}
+                \savebox{\titlegraphicbox}{\inserttitlegraphic}
+                \newlength{\titlegraphicheight}
+                \settoheight{\titlegraphicheight}{\usebox{\titlegraphicbox}}
+
+                \node[text centered, text width=14cm, uw_purple] (title) at (\paperwidth/2, 3*\paperheight/4 + \titlegraphicheight/4 - 3pt) {\usebeamerfont{title}\inserttitle\\ \medskip\usebeamerfont{subtitle}\textcolor{uw_black}{\insertsubtitle}};
+                \node[text centered, text width=10cm] (author) at (\paperwidth/2, 1.8) {\usebeamerfont{author}\insertauthor\\ \medskip\usebeamerfont{date}\insertdate};
+            \fi
+    \end{tikzpicture}
+\end{beamercolorbox}
+}
+
+% Table of contents
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+% Itemize environments
+\setbeamertemplate{itemize items}[circle]
+
+
+\mode<all>

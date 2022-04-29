@@ -1,0 +1,56 @@
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%|                                               |%
+%| By: Jeremy Lilly, Michael Kupperman           |%
+%| 4/29/22                                        |%
+%|                                               |%
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+\mode<presentation>
+
+
+% frametitle
+\defbeamertemplate*{frametitle}{uw_frametitle}{
+   \setbeamertemplate{footline}{}
+   \begin{beamercolorbox}[wd=\paperwidth, ht=1.2cm]{frametitle}
+      \begin{tikzpicture}
+         \useasboundingbox[fill=white](0, 0) rectangle(\the\paperwidth, 1.2);
+         \node[inner sep=0pt] (logo) at (0.55, 0.6) {\includegraphics[scale=0.3]{uw_theme_images/small_uw_logo.png}};
+         \draw[line width=0.3mm, uw_purple] (1.25, 0.02) -- (\the\paperwidth, 0.02);
+         \ifx\insertframesubtitle\@empty%
+            {\node[anchor=west, black] at (1.3, 0.625) {\insertframetitle};}
+         \else%
+            {\node[anchor=west, black] at (1.3, 0.85) {\insertframetitle};
+            \node[anchor=west, black] at (1.3, 0.35) {\usebeamerfont{framesubtitle}\insertframesubtitle};}
+         \fi
+      \end{tikzpicture}
+   \end{beamercolorbox}
+}
+
+% footline
+\defbeamertemplate{footline}{uw_footline}{
+   \ifnum\insertpagenumber=1
+      \hbox{%
+      \begin{beamercolorbox}[wd=\paperwidth, ht=0.25cm, dp=1ex]{}
+         % nothing
+      \end{beamercolorbox}}
+   \else%
+      \hbox{%
+      \begin{beamercolorbox}[wd=0.33\paperwidth, ht=0.25cm, dp=1ex]{palette primary}
+         \tiny\; \insertdate
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=0.34\paperwidth, ht=0.25cm, dp=1ex]{palette primary}
+         \centering\tiny\insertshorttitle
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=0.33\paperwidth, ht=0.25cm, dp=1ex]{palette primary}
+         \tiny\hfill \insertframenumber/\inserttotalframenumber \;
+      \end{beamercolorbox}}
+  \fi
+}
+\setbeamertemplate{footline}[uw_footline]  % comment this line to remove the footer with the date and frame counter
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+
+\mode<all>

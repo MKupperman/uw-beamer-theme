@@ -1,0 +1,165 @@
+%! TeX program = lualatex
+% use lualatex as primary compiler
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%|                                               |%
+%| By: Jeremy Lilly, Michael Kupperman           |%
+%| 4/29/22                                       |%
+%|                                               |%
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+\documentclass{beamer}
+
+% Selects the theme defined in `beamerthemeUW.sty`
+\usetheme{UW}
+
+% Import additional packages here
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%|                                               |%
+%|                                               |%
+%|                                               |%
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+% User defined macros
+\title[Short Title]{Long Title}
+\subtitle{Subtitle}
+\author{Jane Doe\inst{1} \and John Doe\inst{2}}
+\department{Applied Mathematics}
+\institute{
+    \inst{1}Very Fancy University \\
+    \inst{2}Another Fancy University
+}
+\titlegraphic{\includegraphics[scale=0.05]{uw_theme_images/placeholder.png}}
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%|                                               |%
+%|                                               |%
+%|                                               |%
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+\begin{document}
+
+
+% Remove everything below this and replace with your own content
+% The frames defined below show how different environments appear in the OSU theme
+
+
+% The title slide
+\begin{frame}
+    \maketitle
+\end{frame}
+
+% The TOC
+\begin{frame}{Table of Contents}
+    \setcounter{framenumber}{1} % Sets the TOC to be the first numbered frame
+
+    \tableofcontents
+\end{frame}
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+\section{First Section}
+
+\subsection{A Subsection}
+
+    \begin{frame}{Frame Title}{Frame Subtitle}
+        This is a frame with a title and a subtitle.
+
+    \end{frame}
+
+    \begin{frame}{\null}
+        This is a frame with no title.
+    \end{frame}
+
+    \begin{frame}
+        This is a frame with no header.
+    \end{frame}
+
+\subsection{Another Subsection}
+
+    \begin{frame}{Text}
+        \underline{This is underlined text.}
+
+        \textit{This is italic text.}
+
+        \textbf{This is bold text.}
+
+        \texttt{This is mono-spaced text.}
+    \end{frame}
+
+    \begin{frame}{Lists}
+        This is a bulleted list:
+        \begin{itemize}
+            \item An item
+
+            \item Another item
+            \begin{itemize}
+                \item A subitem
+
+                \item Another subitem
+            \end{itemize}
+        \end{itemize}
+
+        This is a numbered list:
+        \begin{enumerate}
+            \item An item
+
+            \item Another item
+            \begin{enumerate}
+                \item A subitem
+
+                \item Another subitem
+            \end{enumerate}
+        \end{enumerate}
+    \end{frame}
+
+    \begin{frame}{Colored Blocks}
+        \begin{block}{Block Title}
+            This is a block.
+        \end{block}
+
+        \begin{alertblock}{Alert Block Title}
+            This is an alertblock.
+        \end{alertblock}
+
+        \begin{example}
+            This is an example block.
+        \end{example}
+    \end{frame}
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+\section{Second Section}
+
+    \begin{frame}{Frame Title}
+        This is a frame the second section.
+    \end{frame}
+
+    \begin{frame}{Frame Title}
+        This is a frame with a...
+
+        \pause
+
+        \texttt{\textbackslash pause}.
+    \end{frame}
+
+\section{Bibliography}
+
+    \nocite{einstein, knuthwebsite, latexcompanion}
+    
+    \begin{frame}{Bibliography}
+        \bibliographystyle{plain}
+        \bibliography{bibliography_file}
+    \end{frame}
+
+\end{document}

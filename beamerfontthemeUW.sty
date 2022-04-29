@@ -1,0 +1,49 @@
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%|                                               |%
+%| By: Jeremy Lilly, Michael Kupperman           |%
+%| 4/29/22                                       |%
+%|                                               |%
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+\mode<presentation>
+
+
+\ifLuaTeX
+    % \setmainfont{Georgia}
+    % \setsansfont{Verdana}
+    \setmainfont{UniSans}[
+        Extension=.otf ,
+        Path=./fonts/UniSans/ ,
+        UprightFont= *Regular ,
+    ]
+\else
+        \ifXeTeX
+        \setmainfont{UniSans}[
+            Extension=.otf ,
+            Path=./fonts/UniSans/ ,
+            UprightFont= *Regular ,
+        ]
+    \else
+        % nothing
+    \fi
+\fi
+
+
+% Title slide
+\setbeamerfont{title}{family=\rmfamily, series=\bfseries, size=\huge}
+\setbeamerfont{subtitle}{family=\rmfamily, series=\mdseries, size=\LARGE}
+\setbeamerfont{author}{family=\rmfamily, size=\large}
+\setbeamerfont{date}{size=\footnotesize}
+\setbeamerfont{department}{family=\rmfamily, size=\large}
+\setbeamerfont{institute}{family=\rmfamily, size=\scriptsize}
+
+% Frametitles
+\setbeamerfont{frametitle}{family=\rmfamily, series=\bfseries}
+\setbeamerfont{framesubtitle}{family=\rmfamily, series=\mdseries, size=\large}
+
+% TOC
+\setbeamerfont{section in toc}{family=\rmfamily, series=\bfseries, size=\large}
+
+
+\mode<all>

@@ -1,0 +1,41 @@
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%|                                               |%
+%| By: Jeremy Lilly, Michael Kupperman           |%
+%| 4/29/22                                       |%
+%|                                               |%
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+\mode<presentation>
+
+
+\RequirePackage{iftex}
+
+\ifLuaTeX
+    \RequirePackage{fontspec}
+\else
+    \ifXeTeX
+        \RequirePackage{fontspec}
+    \else
+        \RequirePackage[utf8]{inputenc}
+        \RequirePackage[T1]{fontenc}
+    \fi
+\fi
+
+
+\RequirePackage{parskip}
+\RequirePackage{tikz}
+\RequirePackage{bookmark}
+\RequirePackage{graphicx}
+
+\usetikzlibrary{positioning}
+
+\usecolortheme{UW}
+\usefonttheme{UW}
+\useinnertheme{UW}
+\useoutertheme{UW}
+
+\newcommand{\department}[1]{\def\insertdepartment{#1}}
+
+
+\mode<all>
