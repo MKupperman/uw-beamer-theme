@@ -10,7 +10,7 @@ Derived largely from [Jeremy Lilly's Oregon State University Beamer Theme](https
 
 ## Usage
 
-To use, place all five `.sty` files and the `uw_theme_images` directory into your working directory and add
+To use, place all five `.sty` files and both `uw_theme_images` and `fonts` directories (and subdirectories) into your working directory and add
 
 `\usetheme{UW}`
 
